@@ -21,7 +21,8 @@ This is a small todo API.
 
 9.  Build proper controllers.
 
-##### FEATURES
+##### FEATURES / LIST OF SHAME
 
 1. Make a custom validator for the password
 2. Custom validator for the deadline. Deadline must be bigger than creation date.
+3. Custom validator for unique emails/username. We just dont like the mongoose error messages.
