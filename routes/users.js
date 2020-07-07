@@ -1,5 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const {
+  userValidationRules,
+  dataValidation,
+} = require('../middleware/validator');
 
 const {
   getUsers,
@@ -9,7 +13,10 @@ const {
   deleteUser,
 } = require('../controllers/usersController');
 
-router.route('/').get(getUsers).post(addUser);
+router
+  .route('/')
+  .get(getUsers)
+  .post(userValidationRules(), dataValidation, addUser);
 
 router
   .route('/:id')

@@ -20,3 +20,8 @@ This is a small todo API.
 8.  Make our data validation using `express-validator`
 
 9.  Build proper controllers.
+
+##### FEATURES
+
+1. Make a custom validator for the password
+2. Custom validator for the deadline. Deadline must be bigger than creation date.

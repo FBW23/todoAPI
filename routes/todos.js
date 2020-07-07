@@ -1,5 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const {
+  todoValidationRules,
+  dataValidation,
+} = require('../middleware/validator');
 
 const {
   getTodos,
@@ -9,7 +13,10 @@ const {
   deleteTodo,
 } = require('../controllers/todosController');
 
-router.route('/').get(getTodos).post(addTodo);
+router
+  .route('/')
+  .get(getTodos)
+  .post(todoValidationRules(), dataValidation, addTodo);
 
 router
   .route('/:id')
