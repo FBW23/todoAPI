@@ -8,3 +8,15 @@ This is a small todo API.
 
 2.  Connect the project to a git repo.
 3.  Set up the process we would like our requests to follow. The request comes in app.js, it then gets redirected to the right router and the router calls the correct controller method based on the type of the request (GET, PUT, POST, DELETE, PLAMEN)
+
+4.  Nodemon setup in `package.json`
+
+5.  Setup CORS in `app.js`
+
+6.  Setup error handling middleware in `app.js`
+
+7.  Mongoose setup and data schemas and models.
+
+8.  Make our data validation using `express-validator`
+
+9.  Build proper controllers.
