@@ -11,12 +11,15 @@ const {
   getTodo,
   updateTodo,
   deleteTodo,
+  deleteMultipleTodos,
 } = require('../controllers/todosController');
 
 router
   .route('/')
   .get(getTodos)
   .post(todoValidationRules(), dataValidation, addTodo);
+
+router.route('/multiple').delete(deleteMultipleTodos);
 
 router
   .route('/:id')
