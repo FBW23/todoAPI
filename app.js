@@ -1,4 +1,4 @@
-/**IMPORTS */
+const mongoose = require('mongoose');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
@@ -14,6 +14,16 @@ const {
 /**GET IT STARTED */
 const app = express();
 
+/** CONNECT TO DATABASE */
+mongoose
+  .connect('mongodb://localhost/todoAPIfbw23', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  })
+  .then(() => 'Connecton established')
+  .catch(console.error);
+
 /**MIDDLEWARE */
 app.use(logger('dev'));
 app.use(express.json());
@@ -26,7 +36,7 @@ app.use(cors());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-/**WHAT IF WE MAKE A REQUEST IN /PLAMEN */
+/**WHAT IF WE MAKE A REQUEST IN /randomURL */
 app.use(handleErrorPaths);
 
 /**ERROR MIDDLEWARE */
