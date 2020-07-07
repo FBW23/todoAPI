@@ -6,6 +6,8 @@ const logger = require('morgan');
 const cors = require('cors');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const todosRouter = require('./routes/users');
+
 const {
   handleErrorPaths,
   errorHandling,
@@ -35,6 +37,7 @@ app.use(cors());
 /** ROUTING */
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/todos', todosRouter);
 
 /**WHAT IF WE MAKE A REQUEST IN /randomURL */
 app.use(handleErrorPaths);
